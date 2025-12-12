@@ -1,0 +1,254 @@
+/* Common layout & theme */
+:root{
+  --bg:#f8f9fa;
+  --card:#ffffff;
+  --muted:#666;
+  --accent:#3498db;
+  --accent-dark:#2d82c6;
+  --success:#d4edda;
+  --danger:#f8d7da;
+  --shadow: 0 6px 18px rgba(0,0,0,0.06);
+  --radius:8px;
+  --pad:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:var(--bg);
+  color:#222;
+  line-height:1.5;
+  padding:20px;
+}
+
+/* container */
+.container{
+  max-width:1140px;
+  margin:0 auto;
+  padding:0 16px;
+}
+
+/* NAVBAR with logo */
+nav{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-bottom:20px;
+  position:sticky;
+  top:12px;
+  z-index:100;
+}
+
+nav .container{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:12px 8px;
+  flex-wrap:wrap;
+}
+
+/* logo */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-right:8px;
+}
+
+.brand .logo-img{
+  /* paksa ukuran maksimum agar tidak terlalu besar */
+  height:64px;        /* lebih besar */
+  max-height:64px;
+  width:auto;
+  display:block;
+  border-radius:6px;
+  object-fit:contain;
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+/* CSS-only logo option (use <div class="brand logo-only"> when you don't want an <img>) */
+.brand.logo-only{
+  display:inline-block;
+  width:180px;       /* adjust width to match new height */
+  height:64px;       /* match .logo-img height */
+  background-image: url('../img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border-radius:6px;
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+/* Retina / high-DPI support if you add a @2x file: public/img/logo@2x.png */
+.brand.logo-only{
+  background-image: image-set(
+    url('../img/logo.png') 1x,
+    url('../img/logo@2x.png') 2x
+  );
+}
+
+/* nav links */
+.nav-links{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-left:8px;
+}
+
+.nav-links a{
+  display:inline-block;
+  text-decoration:none;
+  color:#333;
+  padding:8px 12px;
+  border-radius:6px;
+  transition:all .18s ease;
+  font-weight:600;
+  font-size:14px;
+  border:1px solid transparent;
+}
+
+.nav-links a:hover{
+  background:rgba(52,152,219,0.08);
+  color:var(--accent-dark);
+  border-color:rgba(52,152,219,0.12);
+}
+
+.nav-links a.active{
+  background:var(--accent);
+  color:white;
+  border-color:var(--accent-dark);
+}
+
+/* hero / title */
+h1{
+  margin:0 0 18px 0;
+  font-size:28px;
+  color:#233046;
+}
+
+/* forms & cards */
+form, .card{
+  background:var(--card);
+  padding:var(--pad);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+}
+
+/* fieldset */
+fieldset{
+  border:1px solid #eee;
+  padding:12px;
+  border-radius:6px;
+  margin-bottom:12px;
+}
+
+legend{font-weight:700;color:#2c3e50;padding:0 6px}
+
+/* inputs */
+input[type="text"], textarea, select {
+  width:100%;
+  padding:10px;
+  border:1px solid #e6e9ee;
+  border-radius:6px;
+  font-size:14px;
+  margin-top:6px;
+  margin-bottom:10px;
+  background:#fff;
+}
+
+input[type="checkbox"]{ transform:translateY(2px); }
+
+/* buttons */
+button, .button{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.button.secondary, button.secondary{
+  background:#95a5a6;
+}
+
+button:hover, .button:hover{ filter:brightness(.95); }
+
+/* messages */
+.message{ padding:10px;border-radius:6px;margin-bottom:12px; }
+.success{ background:var(--success); color:#155724; border:1px solid rgba(0,0,0,0.03); }
+.error{ background:var(--danger); color:#721c24; border:1px solid rgba(0,0,0,0.03); }
+
+/* ingredient grid */
+.ingredients-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:10px;
+}
+
+.ingredients-list label{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  padding:10px;
+  border-radius:6px;
+  background:#fbfdff;
+  border:1px solid #f0f4f8;
+  font-weight:600;
+}
+
+/* recipe card */
+.recipe-card{
+  border-radius:10px;
+  padding:16px;
+  background:#fff;
+  border:1px solid #eef3f7;
+  margin-bottom:12px;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.recipe-card:hover{ transform:translateY(-4px); box-shadow:0 10px 30px rgba(16,24,40,0.06); }
+
+.recipe-title{ font-weight:700; color:#233046; margin-bottom:6px; }
+.recipe-ingredients{ color:var(--muted); font-size:14px; margin-bottom:8px; }
+.recipe-instructions{ white-space:pre-line; color:#333; }
+
+/* actions area */
+.actions{ margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
+
+/* search bar */
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: #999;
+}
+
+/* responsive */
+@media (max-width:720px){
+  .ingredients-list{ grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); }
+  nav .container{ padding:10px; }
+  .brand .logo-img{ height:48px; max-height:48px; } /* ukuran mobile */
+  .brand.logo-only{ width:140px; height:48px; }
+   body{ padding:12px;}
+}
