@@ -1,0 +1,28 @@
+{
+    "name": "resepkita",
+    "description": "A web application for searching recipes based on selected ingredients.",
+    "type": "project",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "slim/slim": "^4.0",
+        "illuminate/database": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
