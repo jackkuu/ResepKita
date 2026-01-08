@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "bg": "#f8f9fa",
+    "card": "#ffffff",
+    "muted": "#666666",
+    "text": "#222222",
+    "accent": "#3498db",
+    "accentDark": "#2d82c6",
+    "successBg": "#d4edda",
+    "dangerBg": "#f8d7da",
+    "borderLight": "#e6e9ee",
+    "borderSubtle": "#f0f4f8",
+    "navLinkHoverBg": "rgba(52,152,219,0.08)"
+  },
+  "shadows": {
+    "card": "0 6px 18px rgba(0,0,0,0.06)",
+    "cardHover": "0 10px 30px rgba(16,24,40,0.06)"
+  },
+  "radii": {
+    "global": "8px",
+    "small": "6px",
+    "card": "10px"
+  },
+  "spacing": {
+    "pad": "16px",
+    "gap": "10px"
+  },
+  "typography": {
+    "fontFamily": "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
+    "bodySize": "14px",
+    "bodyLineHeight": 1.5,
+    "h1Size": "28px",
+    "navSize": "14px",
+    "searchSize": "16px",
+    "weights": {
+      "regular": 400,
+      "semibold": 600,
+      "bold": 700
+    }
+  },
+  "exportRecommendations": {
+    "logo": [32, 64, 128],
+    "thumbnails": [400, 280],
+    "detail": [1200, 800]
+  }
+}
